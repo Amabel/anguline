@@ -1,9 +1,11 @@
 <div class="login-container">
   <div class="input-container">
     <span class="ui-float-label">
-      <input class="float-input" id="float-input" type="text" size="30" pInputText>
+      <input [(ngModel)]="username" class="float-input" id="float-input" type="text" size="20" pInputText style="width:100%;" pInputText >
       <label for="float-input">Username</label>
     </span>
-    <button pButton type="button" (click)="count()" label="Success" class="ui-button-success"></button>
+    <div class="button-wrapper">
+      <button pButton type="button" style="width:130px;" label="login" class="ui-button-secondary" [disabled]=!isUsernameInput()></button>
+    </div>
   </div>
 </div>
