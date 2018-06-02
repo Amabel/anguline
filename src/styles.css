@@ -3,12 +3,17 @@
 @import url('../node_modules/primeng/resources/themes/omega/theme.css');
 @import url('../node_modules/primeng/resources/primeng.min.css');
 
+html {
+  height: 100%;
+}
 body {
-    background: url('/assets/images/background.jpeg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  margin: 0;
+  height: 100%;
+  background: url('/assets/images/background.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* .btn-login {
