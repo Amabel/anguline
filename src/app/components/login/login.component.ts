@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
-import { LoginService } from '../shared/services/login.service';
-import { UserImageService } from '../shared/services/user-image.service';
+import { Router } from '@angular/router';
+
+import { LoginService } from '../../shared/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,17 +12,22 @@ import { UserImageService } from '../shared/services/user-image.service';
 export class LoginComponent implements OnInit {
 
   username: string;
-  userImageUrl: string;
 
-  constructor(private loginService: LoginService, private ss: UserImageService) { }
+  constructor(
+    private router: Router,
+    private loginService: LoginService
+  ) { }
 
   ngOnInit() {
-    this.userImageUrl = this.ss.userImageUrl;
+
   }
 
   login() {
-    // console.log("login button clicked!");
-    this.loginService.login();
+    this.loginService.login(this.username);
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 1000);
+
   }
 
   private isUsernameInput(): boolean {

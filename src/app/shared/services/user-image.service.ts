@@ -15,13 +15,6 @@ export class UserImageService {
 
   constructor(private http: HttpClient) { }
 
-  getUserImageUrl() {
-    this.getImageUrl().then(() => {
-      console.log('ffff');
-      return this.userImageUrl;
-    });
-  }
-
   getImageUrl() {
     let promise = new Promise((resolve, reject) => {
       this.http.get(this.requestUrl)
