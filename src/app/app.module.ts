@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { ButtonModule } from 'primeng/button';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { LoginService } from './shared/services/login.service';
+import { UserImageService } from './shared/services/user-image.service';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,17 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     InputTextModule,
     ButtonModule,
     SplitButtonModule,
     BrowserAnimationsModule,
     FormsModule
+  ],
+  providers: [
+    LoginService,
+    UserImageService
   ],
   bootstrap: [AppComponent]
 })

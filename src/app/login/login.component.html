@@ -5,7 +5,9 @@
       <label for="float-input">Username</label>
     </span>
     <div class="button-wrapper">
-      <button pButton type="button" style="width:130px;" label="login" class="ui-button-secondary" [disabled]=!isUsernameInput()></button>
+      <button pButton type="button" (click)="login($event)" style="width:130px;" label="login" class="ui-button-secondary" [disabled]=!isUsernameInput()></button>
     </div>
+
+    <div>{{userImageUrl}}</div>
   </div>
 </div>
