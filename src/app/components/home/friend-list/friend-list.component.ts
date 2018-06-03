@@ -28,7 +28,6 @@ export class FriendListComponent implements OnInit {
     //   username: 'aaa',
     //   avatarUrl: ''
     // };
-    console.log(this.me);
     this.users = this.userService.getUsers();
   }
 

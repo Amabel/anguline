@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="foot-wrapper">
-      <textarea class="editArea" [(ngModel)]="text"></textarea>
+      <textarea class="editArea" [(ngModel)]="text" (keydown.enter)="send();false"></textarea>
       <div class="action">
         <button pButton type="button" label="Send" class="ui-button-secondary" (click)="send()"></button>
       </div>

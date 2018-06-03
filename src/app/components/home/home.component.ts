@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
     avatarUrl: ''
   };
 
-
   constructor(
     private loginService: LoginService,
     private userService: UserService,
@@ -42,7 +41,5 @@ export class HomeComponent implements OnInit {
   switchUser(user: User) {
     this.selectedUser = user;
     this.title = user.username;
-    console.log(user.username);
   }
-
 }

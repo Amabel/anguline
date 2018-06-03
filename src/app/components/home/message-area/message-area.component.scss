@@ -41,6 +41,7 @@
 
         .text {
           float: right;
+          height: 22px;
           padding: 9px 13px 9px 13px;
           line-height: 22px;
           background-color: #b2e281;
@@ -65,6 +66,7 @@
         float: left;
 
         .text {
+          height: 22px;
           margin-left: 10px;
           float: left;
           padding: 9px 13px 9px 13px;
@@ -138,7 +140,8 @@
     height: 100%;
     text-align: center;
     line-height: 100%;
-    text-shadow:#4a4a4a 0 0 10px;
+    text-shadow:#aaa8a8 0 0 10px;
+    color: #dddddd;
     color:white;
     font-size:60px;
     font-family: "Roboto";

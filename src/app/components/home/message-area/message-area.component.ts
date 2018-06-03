@@ -51,9 +51,6 @@ export class MessageAreaComponent implements OnInit {
                    return data;
                 })
               );
-        this.messages.subscribe(data => {
-          console.log(data);
-        });
       }
     }
   }
@@ -63,9 +60,11 @@ export class MessageAreaComponent implements OnInit {
   }
 
   send() {
-    this.messageService.sendMessage(this.username, this.title, this.text);
-    this.text = '';
-    this.forceScrollDown();
+    if (this.text.trim()) {
+      this.messageService.sendMessage(this.username, this.title, this.text);
+      this.text = '';
+      this.forceScrollDown();
+    }
   }
   forceScrollDown() {
     this.ngxAutoScroll.forceScrollDown();

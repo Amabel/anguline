@@ -34,7 +34,6 @@ export class LoginService {
         });
         this.users = this.usersCollection.valueChanges();
         this.users.subscribe(result => {
-          console.log(result.length);
           if (result.length == 0) {
             this.addUser(this.user);
           } else {
