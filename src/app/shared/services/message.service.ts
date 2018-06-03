@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { Observable, merge } from 'rxjs';
+import { Observable, BehaviorSubject, combineLatest, of, pipe } from 'rxjs';
 import { Message } from '../../models/Message';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,18 +20,31 @@ export class MessageService {
   }
 
   getMessages(myUsername: string, targetUsername: string) {
-    return merge(this.queryMessages(myUsername, targetUsername), this.queryMessages(targetUsername, myUsername));
+
+    const outMsgRef = this.queryMessages(myUsername, targetUsername);
+    const inMsgRef = this.queryMessages(targetUsername, myUsername);
+    return combineLatest(outMsgRef.valueChanges(), inMsgRef.valueChanges());
+
+    // return merge(this.queryMessages(myUsername, targetUsername), this.queryMessages(targetUsername, myUsername));
+    // return this.queryMessages(myUsername, targetUsername);
   }
 
   queryMessages(from: string, to: string) {
+    // return this.afs.collection<Message>('messages', ref => {
+    //   return ref.where('from_username', '==', from).where('to_username', '==', to).orderBy('sent_at');
+    // }).valueChanges();
     return this.afs.collection<Message>('messages', ref => {
       return ref.where('from_username', '==', from).where('to_username', '==', to).orderBy('sent_at');
-    }).valueChanges();
+    });
   }
 
-  sendMessage(message: Message) {
+  sendMessage(from: string, to: string, content: string) {
+    var message: Message = {
+      from_username: from,
+      to_username: to,
+      content: content,
+      sent_at: new Date()
+    }
     this.messagesCollection.add(message);
   }
-
-
 }

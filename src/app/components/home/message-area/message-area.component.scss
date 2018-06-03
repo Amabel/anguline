@@ -22,27 +22,26 @@
 
   .chat-area {
     margin: 0 19px 0 19px;
-    width: 682px;
+    width: auto;
     height: 70%;
     background-color: #eeeeee;
     overflow: hidden;
     // border-bottom: 1px solid #d6d6d6;
 
-    .content {
-      margin: 0 auto;
-      width: 600px;
-      height: 40px;
-      line-height: 40px;
-    }
+    // .content {
+    //   margin: 0 auto;
+    //   width: 600px;
+    //   height: 40px;
+    //   line-height: 40px;
+    // }
 
     .out-content {
-
-      margin: auto;
-      margin-top: 16px;
-      width: 640px;
+      margin: 20px auto;
+      width: 660px;
       height: 40px;
       line-height: 40px;
       text-align: right;
+      float: left;
 
       .text {
         float: right;
@@ -63,11 +62,11 @@
     }
 
     .in-content {
-      margin: auto;
-      margin-top: 16px;
-      width: 640px;
+      margin: 15px auto;
+      width: 660px;
       height: 40px;
       line-height: 40px;
+      float: left;
 
       .text {
         margin-left: 10px;
@@ -87,19 +86,55 @@
     }
   }
 
+  .chat-area::-webkit-scrollbar {
+    width: 6px;
+    // opacity: 0.2;
+  }
+  .chat-area::-webkit-scrollbar-thumb {
+    background-color: rgba(#999999, 0.4);
+    border-radius: 8px;
+  }
+  .chat-area::-webkit-scrollbar-track {
+    opacity: 0;
+  }
+
   .chat-area:hover {
-    // overflow-y: scroll;
+    overflow-y: scroll;
   }
 
   .foot-wrapper {
-    width: 701px;
+    // display: flex;
+    // flex-direction: column;
+    width: 681px;
     height: 181px;
+    padding-left: 20px;
     border-top: 1px solid #d6d6d6;
     // background-color: blue;
 
     .editArea {
-      padding-left: 20px;
+      margin-top: 15px;
+      width: 681px;
+      height: 100px;
+      border: 0;
+      resize: none;
+      font-size: 18px;
+      color: #070707;
+      background-color: #eeeeee;
     }
+
+    .editArea:focus {
+      outline: none !important;
+    }
+    .action {
+      .ui-button {
+        width: 90px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 4px;
+        float: right;
+      }
+    }
+
   }
 
 

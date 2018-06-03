@@ -23,6 +23,7 @@ import { UserService } from './shared/services/user.service';
 import { MessageService } from './shared/services/message.service';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { ChatItemComponent } from './components/home/friend-list/chat-item/chat-item.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ChatItemComponent } from './components/home/friend-list/chat-item/chat-
     AngularFireModule.initializeApp(environment.firebase, 'anguline'),
     AngularFirestoreModule,
     AngularFirestoreModule.enablePersistence(),
-    ScrollPanelModule
+    ScrollPanelModule,
+    InputTextareaModule
   ],
   providers: [
     LoginService,

@@ -6,10 +6,9 @@
       {{ target.username }}
     </div>
   </div>
-  <div class="chat-area">
-    <!-- {{ messages }} -->
-    <div *ngFor="let message of messages">
-      <div *ngIf="message.from_username == username; else inContent">
+  <div class="chat-area" #chatPanel>
+    <div *ngFor="let message of messages | async as Message">
+      <div *ngIf="message.from_username === username; else inContent">
         <div class="out-content">
           <img src="{{ avatarUrl }}" alt="" class="avatar ">
           <div class="text">
@@ -18,7 +17,6 @@
         </div>
 
       </div>
-      <!-- <div [ngClass]="(message.from_username == username) ? 'out-msg':'in-msg'" class="content"> -->
       <ng-template #inContent>
         <div class="in-content">
           <img src="{{ target.avatarUrl }}" alt="" class="avatar">
@@ -30,14 +28,34 @@
     </div>
   </div>
 
+
+  <!-- <div *ngFor="let message of messages">
+      <div *ngIf="message.from_username == username; else inContent">
+        <div class="out-content">
+          <img src="{{ avatarUrl }}" alt="" class="avatar ">
+          <div class="text">
+            {{ message.content }}
+          </div>
+        </div>
+
+      </div>
+      <ng-template #inContent>
+        <div class="in-content">
+          <img src="{{ target.avatarUrl }}" alt="" class="avatar">
+          <div class="text">
+            {{ message.content }}
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div> -->
+
   <div class="foot-wrapper">
-    <textarea class="editArea" rows="4" cols="50">
-    At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-    </textarea>
+    <textarea class="editArea" [(ngModel)]="text"></textarea>
+    <div class="action">
+      <button pButton type="button" label="Send" class="ui-button-secondary" (click)="send()"></button>
+    </div>
   </div>
-
-
-
   <!-- </div> -->
 
   <ng-template #notSelected>
