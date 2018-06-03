@@ -8,7 +8,7 @@
         {{ target.username }}
       </div>
     </div>
-    <div class="chat-area" #chatPanel>
+    <div class="chat-area" ngx-auto-scroll lock-y-offset="10" observe-attributes>
       <div *ngFor="let message of messages | async as Message">
         <div *ngIf="message.from_username === username; else inContent">
           <div class="out-content">

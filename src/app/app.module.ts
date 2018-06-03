@@ -24,6 +24,7 @@ import { MessageService } from './shared/services/message.service';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { ChatItemComponent } from './components/home/friend-list/chat-item/chat-item.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { NgxAutoScrollModule } from "ngx-auto-scroll";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     AngularFirestoreModule,
     AngularFirestoreModule.enablePersistence(),
     ScrollPanelModule,
-    InputTextareaModule
+    InputTextareaModule,
+    NgxAutoScrollModule
   ],
   providers: [
     LoginService,
