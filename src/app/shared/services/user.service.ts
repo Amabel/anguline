@@ -13,17 +13,8 @@ export class UserService {
   users: Observable<User[]>;
 
   constructor(public afs: AngularFirestore) {
-    // this.usersCollection = afs.collection<User>('users');
-  }
-
-  isUserExist(user: User) {
-    this.usersCollection = this.afs.collection<User>('users', ref => {
-      return ref.where('username', '==', 'aaa');
-    });
+    this.usersCollection = afs.collection<User>('users');
     this.users = this.usersCollection.valueChanges();
-    this.users.subscribe(result => {
-      console.log(result.length);
-    });
   }
 
   getUsers() {

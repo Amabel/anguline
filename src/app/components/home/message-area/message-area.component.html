@@ -1,3 +1,48 @@
 <div class="container">
-  message-area
+  <!-- <div *ngIf="!!title; else notSelected"> -->
+  <div class="title-wrapper">
+    <div class="title">
+      <!-- {{ title }} -->
+      {{ target.username }}
+    </div>
+  </div>
+  <div class="chat-area">
+    <!-- {{ messages }} -->
+    <div *ngFor="let message of messages">
+      <div *ngIf="message.from_username == username; else inContent">
+        <div class="out-content">
+          <img src="{{ avatarUrl }}" alt="" class="avatar ">
+          <div class="text">
+            {{ message.content }}
+          </div>
+        </div>
+
+      </div>
+      <!-- <div [ngClass]="(message.from_username == username) ? 'out-msg':'in-msg'" class="content"> -->
+      <ng-template #inContent>
+        <div class="in-content">
+          <img src="{{ target.avatarUrl }}" alt="" class="avatar">
+          <div class="text">
+            {{ message.content }}
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="foot-wrapper">
+    <textarea class="editArea" rows="4" cols="50">
+    At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+    </textarea>
+  </div>
+
+
+
+  <!-- </div> -->
+
+  <ng-template #notSelected>
+    <div class="blank-chat-area">
+      please select
+    </div>
+  </ng-template>
 </div>

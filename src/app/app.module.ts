@@ -20,7 +20,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginService } from './shared/services/login.service';
 import { UserImageService } from './shared/services/user-image.service';
 import { UserService } from './shared/services/user.service';
-
+import { MessageService } from './shared/services/message.service';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { ChatItemComponent } from './components/home/friend-list/chat-item/chat-item.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { UserService } from './shared/services/user.service';
     FriendListComponent,
     MessageAreaComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ChatItemComponent
   ],
   imports: [
     BrowserModule,
@@ -41,11 +44,13 @@ import { UserService } from './shared/services/user.service';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase, 'anguline'),
     AngularFirestoreModule,
-    AngularFirestoreModule.enablePersistence()
+    AngularFirestoreModule.enablePersistence(),
+    ScrollPanelModule
   ],
   providers: [
     LoginService,
-    UserImageService
+    UserImageService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,41 @@
+.chat-item {
+  height: 40px;
+  padding: 12px 18px 11px 18px;
+  border-bottom: 1px solid #2a2c34;
+
+  .avatar-wrapper {
+    float: left;
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    border-radius: 2px;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+    }
+  }
+  .nickname {
+    margin-left: 10px;
+    width: 162px;
+    height: 20px;
+    float: left;
+    line-height: 15px;
+    font-family: 'Mplus 1p';
+    // font-weight: bold;
+    font-size: 16px;
+    color: #ededed;
+  }
+
+  .message {
+    margin-left: 10px;
+    color: #999999;
+  }
+}
+
+.selected {
+  background-color: #3a3f44;
+  // background-color: #ffffff;
+
+}

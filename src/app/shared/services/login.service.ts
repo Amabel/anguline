@@ -14,7 +14,7 @@ export class LoginService {
   user: User = {
     username: '',
     avatarUrl: ''
-  }
+  };
 
   usersCollection: AngularFirestoreCollection<User>;
   users: Observable<User[]>;
@@ -37,6 +37,8 @@ export class LoginService {
           console.log(result.length);
           if (result.length == 0) {
             this.addUser(this.user);
+          } else {
+            this.user.avatarUrl = result[0].avatarUrl;
           }
         });
       }

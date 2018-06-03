@@ -1,3 +1,15 @@
 <div class="container">
-  friend-list
+  <div class="header-wrapper">
+    <div class="avatar-wrapper">
+      <img src="{{ me.avatarUrl }}" alt="" class="avatar">
+    </div>
+    <div class="info">
+      {{ me.username }}
+    </div>
+  </div>
+  <div class="separate-line"></div>
+
+  <div class="chat-item-wrapper">
+    <app-chat-item *ngFor="let user of users | async; " [nickname]="user.username" [avatarUrl]="user.avatarUrl" (onSelect)="onSelect($event)" [selected]="user.username===selectedName"></app-chat-item>
+  </div>
 </div>

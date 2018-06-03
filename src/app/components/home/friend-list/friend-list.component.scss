@@ -1,8 +1,70 @@
 .container {
+  display: flex;
+  flex-direction: column;
   width: 280px;
   height: 100%;
   float: left;
-  background-color: #292c33;
+  background-color: #2f3238;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+
+  .header-wrapper {
+    height: 40px;
+    padding: 18px;
+    // background-color: red;
+
+    .avatar-wrapper {
+      float: left;
+      width: 40px;
+      height: 40px;
+      background-color: yellow;
+      border-radius: 2px;
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 2px;
+      }
+    }
+
+    .info {
+      margin-left: 10px;
+      float: left;
+      line-height: 40px;
+      font-family: 'Mplus 1p';
+      font-weight: bold;
+      font-size: 20px;
+      color: white;
+    }
+  }
+
+  .separate-line {
+    height: 1px;
+    background-color: #25272d;
+  }
+
+  .chat-item-wrapper {
+    max-height: 652px;
+    height: auto;
+    overflow-y: hidden;
+    overflow-y: scroll;
+
+  }
+
+  .chat-item-wrapper:hover {
+    overflow-y: scroll;
+
+  }
+
+  .chat-item-wrapper::-webkit-scrollbar {
+    width: 10px;
+    // opacity: 0.2;
+  }
+  .chat-item-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(#575757, 0.4);
+    border-radius: 8px;
+  }
+  .chat-item-wrapper::-webkit-scrollbar-track {
+    opacity: 0;
+  }
 }
