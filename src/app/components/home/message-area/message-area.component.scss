@@ -1,141 +1,149 @@
 .container {
   width: 720px;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   background-color: #eeeeee;
   float: left;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 
-  .title-wrapper {
-    margin: 0 15px;
-    text-align: center;
-    padding: 10px 0;
-    height: 30px;
-    border-bottom: 1px solid #d6d6d6;
+  .selected-title {
+    width: 720px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
-    .title {
-      line-height: 30px;
-    }
-  }
+    .title-wrapper {
+      margin: 0 15px;
+      text-align: center;
+      padding: 10px 0;
+      height: 30px;
+      border-bottom: 1px solid #d6d6d6;
 
-  .chat-area {
-    margin: 0 19px 0 19px;
-    width: auto;
-    height: 70%;
-    background-color: #eeeeee;
-    overflow: hidden;
-    // border-bottom: 1px solid #d6d6d6;
-
-    // .content {
-    //   margin: 0 auto;
-    //   width: 600px;
-    //   height: 40px;
-    //   line-height: 40px;
-    // }
-
-    .out-content {
-      margin: 20px auto;
-      width: 660px;
-      height: 40px;
-      line-height: 40px;
-      text-align: right;
-      float: left;
-
-      .text {
-        float: right;
-        padding: 9px 13px 9px 13px;
-        line-height: 22px;
-        background-color: #b2e281;
-        border-radius: 2px;
-      }
-
-      .avatar {
-        margin-left: 10px;
-        width: 40px;
-        height: 40px;
-        float: right;
-        border-radius: 2px;
-        background-color: yellow;
-      }
-    }
-
-    .in-content {
-      margin: 15px auto;
-      width: 660px;
-      height: 40px;
-      line-height: 40px;
-      float: left;
-
-      .text {
-        margin-left: 10px;
-        float: left;
-        padding: 9px 13px 9px 13px;
-        line-height: 22px;
-        background-color: #ffffff;
-        border-radius: 2px;
-
-      }
-      .avatar {
-        width: 40px;
-        height: 40px;
-        float: left;
-        border-radius: 2px;
-      }
-    }
-  }
-
-  .chat-area::-webkit-scrollbar {
-    width: 6px;
-    // opacity: 0.2;
-  }
-  .chat-area::-webkit-scrollbar-thumb {
-    background-color: rgba(#999999, 0.4);
-    border-radius: 8px;
-  }
-  .chat-area::-webkit-scrollbar-track {
-    opacity: 0;
-  }
-
-  .chat-area:hover {
-    overflow-y: scroll;
-  }
-
-  .foot-wrapper {
-    // display: flex;
-    // flex-direction: column;
-    width: 681px;
-    height: 181px;
-    padding-left: 20px;
-    border-top: 1px solid #d6d6d6;
-    // background-color: blue;
-
-    .editArea {
-      margin-top: 15px;
-      width: 681px;
-      height: 100px;
-      border: 0;
-      resize: none;
-      font-size: 18px;
-      color: #070707;
-      background-color: #eeeeee;
-    }
-
-    .editArea:focus {
-      outline: none !important;
-    }
-    .action {
-      .ui-button {
-        width: 90px;
-        height: 30px;
+      .title {
         line-height: 30px;
-        border-radius: 4px;
-        float: right;
       }
     }
 
+    .chat-area {
+      margin: 0 19px 0 19px;
+      width: auto;
+      height: 70%;
+      background-color: #eeeeee;
+      overflow: hidden;
+
+      .out-content {
+        margin: 20px auto;
+        width: 660px;
+        height: 40px;
+        line-height: 40px;
+        text-align: right;
+        float: left;
+
+        .text {
+          float: right;
+          padding: 9px 13px 9px 13px;
+          line-height: 22px;
+          background-color: #b2e281;
+          border-radius: 2px;
+        }
+
+        .avatar {
+          margin-left: 10px;
+          width: 40px;
+          height: 40px;
+          float: right;
+          border-radius: 2px;
+          background-color: yellow;
+        }
+      }
+
+      .in-content {
+        margin: 15px auto;
+        width: 660px;
+        height: 40px;
+        line-height: 40px;
+        float: left;
+
+        .text {
+          margin-left: 10px;
+          float: left;
+          padding: 9px 13px 9px 13px;
+          line-height: 22px;
+          background-color: #ffffff;
+          border-radius: 2px;
+
+        }
+        .avatar {
+          width: 40px;
+          height: 40px;
+          float: left;
+          border-radius: 2px;
+        }
+      }
+    }
+
+    .chat-area::-webkit-scrollbar {
+      width: 6px;
+    }
+    .chat-area::-webkit-scrollbar-thumb {
+      background-color: rgba(#999999, 0.4);
+      border-radius: 8px;
+    }
+    .chat-area::-webkit-scrollbar-track {
+      opacity: 0;
+    }
+
+    .chat-area:hover {
+      overflow-y: scroll;
+    }
+
+    .foot-wrapper {
+      width: 681px;
+      height: 181px;
+      padding-left: 20px;
+      border-top: 1px solid #d6d6d6;
+
+      .editArea {
+        margin-top: 15px;
+        width: 681px;
+        height: 100px;
+        border: 0;
+        resize: none;
+        font-size: 18px;
+        color: #070707;
+        background-color: #eeeeee;
+      }
+
+      .editArea:focus {
+        outline: none !important;
+      }
+      .action {
+        .ui-button {
+          width: 90px;
+          height: 30px;
+          line-height: 30px;
+          border-radius: 4px;
+          float: right;
+        }
+      }
+    }
   }
 
+  .blank-chat-area {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity: 0.3;
+    width: 720px;
+    height: 100%;
+    text-align: center;
+    line-height: 100%;
+    text-shadow:#4a4a4a 0 0 10px;
+    color:white;
+    font-size:60px;
+    font-family: "Roboto";
+    font-weight: bolder;
+
+  }
 
 }

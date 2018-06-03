@@ -5,7 +5,6 @@ import { UserService } from '../../../shared/services/user.service';
 import { MessageService } from '../../../shared/services/message.service';
 import { Message } from '../../../models/Message';
 import { User } from '../../../models/User';
-import { Timestamp } from '../../../models/Timestamp';
 import { switchMap, map } from 'rxjs/operators';
 
 @Component({
