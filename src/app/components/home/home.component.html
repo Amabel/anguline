@@ -1,4 +1,4 @@
 <div class="container">
   <app-friend-list (switchUser)="switchUser($event)" [selectedName]="title"></app-friend-list>
-  <app-message-area [title]="title" [avatarUrl]="!!user ? user.avatarUrl : ''" [username]="me.username" [target]="selectedUser"></app-message-area>
+  <app-message-area [title]="title" [avatarUrl]="me.avatarUrl" [username]="me.username" [target]="selectedUser"></app-message-area>
 </div>
