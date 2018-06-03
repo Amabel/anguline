@@ -31,11 +31,11 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.me = this.loginService.user;
-    this.me = {
-      username: 'aaa',
-      avatarUrl: 'https://randomuser.me/api/portraits/thumb/women/30.jpg'
-    };
+    this.me = this.loginService.user;
+    // this.me = {
+    //   username: 'aaa',
+    //   avatarUrl: 'https://randomuser.me/api/portraits/thumb/women/30.jpg'
+    // };
     this.users = this.userService.getUsers();
   }
 

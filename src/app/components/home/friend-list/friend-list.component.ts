@@ -23,11 +23,11 @@ export class FriendListComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.me = this.loginService.user;
-    this.me = {
-      username: 'aaa',
-      avatarUrl: ''
-    };
+    this.me = this.loginService.user;
+    // this.me = {
+    //   username: 'aaa',
+    //   avatarUrl: ''
+    // };
     console.log(this.me);
     this.users = this.userService.getUsers();
   }
