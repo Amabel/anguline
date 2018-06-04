@@ -1,4 +1,4 @@
-<div class="chat-item" (click)="select()" [class.selected]="selected">
+<div *ngIf="nickname !== me.username" class="chat-item" (click)="select()" [class.selected]="selected">
   <div class="avatar-wrapper">
     <img src="{{ avatarUrl }}" alt="" class="avatar">
   </div>

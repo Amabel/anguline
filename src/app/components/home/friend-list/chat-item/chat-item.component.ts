@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../../../../models/User';
+import { LoginService } from '../../../../shared/services/login.service';
 
 @Component({
   selector: 'app-chat-item',
@@ -16,10 +17,12 @@ export class ChatItemComponent implements OnInit {
   @Output() onSelect = new EventEmitter<User>();
 
   user: User;
+  me: User;
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+    this.me = this.loginService.user;
   }
 
   select() {
@@ -29,7 +32,4 @@ export class ChatItemComponent implements OnInit {
     }
     this.onSelect.emit(this.user);
   }
-
-
-
 }
