@@ -22,11 +22,12 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login(this.username);
-    setTimeout(() => {
-      this.router.navigate(['/home']);
-    }, 1000);
-
+    if (this.username.trim()) {
+      this.loginService.login(this.username);
+      setTimeout(() => {
+        this.router.navigate(['/home']);
+      }, 1000);
+    }
   }
 
   private isUsernameInput(): boolean {
