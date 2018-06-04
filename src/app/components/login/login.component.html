@@ -2,7 +2,7 @@
   <div class="input-container">
     <span class="ui-float-label">
       <input [(ngModel)]="username" class="float-input" id="float-input" type="text" size="20" pInputText style="width:100%;" pInputText (keydown.enter)="login()">
-      <label for="float-input">Username</label>
+      <label for="float-input">Nickname</label>
     </span>
     <div class="button-wrapper">
       <button pButton type="button" (click)="login()" style="width:130px;" label="login" class="ui-button-secondary" [disabled]=!isUsernameInput()></button>
