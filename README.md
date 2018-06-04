@@ -14,4 +14,4 @@
 
 * New message notification
 * Sign up and login auth
-* Timestamp
+* Custom avatar
