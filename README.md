@@ -2,6 +2,7 @@
 
 * Deployed on: https://auguline-534c8.firebaseapp.com/
 * Suggested browser: Google Chrome 66 or later
+* Please **DO NOT REFRESH** the page
 
 ## Usage
 
