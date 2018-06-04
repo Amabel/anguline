@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.username.trim()) {
+    if (this.username && this.username.trim()) {
       this.loginService.login(this.username);
       setTimeout(() => {
         this.router.navigate(['/home']);
