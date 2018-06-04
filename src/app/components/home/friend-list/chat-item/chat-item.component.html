@@ -5,6 +5,10 @@
   <span class="nickname">
     {{ nickname }}
   </span>
+  <span class="time">
+    {{ lastTime ? (lastTime | date:'shortTime') : '' }}
+  </span>
   <span class="message">
+    {{ lastMessage ? lastMessage.content : '' }}
   </span>
 </div>

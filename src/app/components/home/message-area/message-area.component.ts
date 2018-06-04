@@ -1,11 +1,11 @@
 import { Component, Input, OnInit, OnChanges, SimpleChange, ViewChild, ElementRef } from '@angular/core';
 import { Observable, merge, combineLatest, of } from 'rxjs';
+import { switchMap, map } from 'rxjs/operators';
 import { LoginService } from '../../../shared/services/login.service';
 import { UserService } from '../../../shared/services/user.service';
 import { MessageService } from '../../../shared/services/message.service';
 import { Message } from '../../../models/Message';
 import { User } from '../../../models/User';
-import { switchMap, map } from 'rxjs/operators';
 import { NgxAutoScroll } from "ngx-auto-scroll";
 
 @Component({
@@ -21,7 +21,6 @@ export class MessageAreaComponent implements OnInit {
   @Input() target: User;
   messages: any;
   messages$: Observable<any[]>;
-
   text: string;
 
 

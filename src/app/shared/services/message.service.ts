@@ -20,11 +20,9 @@ export class MessageService {
   }
 
   getMessages(myUsername: string, targetUsername: string) {
-
     const outMsgRef = this.queryMessages(myUsername, targetUsername);
     const inMsgRef = this.queryMessages(targetUsername, myUsername);
     return combineLatest(outMsgRef.valueChanges(), inMsgRef.valueChanges());
-
     // return merge(this.queryMessages(myUsername, targetUsername), this.queryMessages(targetUsername, myUsername));
     // return this.queryMessages(myUsername, targetUsername);
   }

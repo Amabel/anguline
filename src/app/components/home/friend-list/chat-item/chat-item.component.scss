@@ -2,6 +2,7 @@
   height: 40px;
   padding: 12px 18px 11px 18px;
   border-bottom: 1px solid #2a2c34;
+  overflow: hidden;
 
   .avatar-wrapper {
     float: left;
@@ -18,17 +19,29 @@
   }
   .nickname {
     margin-left: 10px;
-    width: 162px;
+    width: 100px;
     height: 20px;
     float: left;
     line-height: 15px;
     font-family: 'Mplus 1p';
-    // font-weight: bold;
     font-size: 16px;
     color: #ededed;
+    overflow: hidden;
+  }
+  .time {
+    color: #eeeeee;
+    width: auto;
+    float: right;
+    font-size: 14px;
+    line-height: 20px;
   }
 
   .message {
+    display: block;
+    float: left;
+    width: 182px;
+    overflow: hidden;
+    white-space:nowrap;
     margin-left: 10px;
     color: #999999;
   }
@@ -36,6 +49,4 @@
 
 .selected {
   background-color: #3a3f44;
-  // background-color: #ffffff;
-
 }
