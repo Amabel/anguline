@@ -34,16 +34,18 @@
       .out-content {
         margin: 20px auto;
         width: 660px;
-        height: 40px;
+        height: auto;
         line-height: 40px;
         text-align: right;
         float: left;
 
         .text {
           float: right;
-          height: 22px;
+          max-width: 400px;
+          height: auto;
           padding: 9px 13px 9px 13px;
           line-height: 22px;
+          text-align: left;
           background-color: #b2e281;
           border-radius: 2px;
         }
@@ -61,12 +63,13 @@
       .in-content {
         margin: 15px auto;
         width: 660px;
-        height: 40px;
+        height: auto;
         line-height: 40px;
         float: left;
 
         .text {
-          height: 22px;
+          height: auto;
+          max-width: 400px;
           margin-left: 10px;
           float: left;
           padding: 9px 13px 9px 13px;
